@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F2128953-9EEE-49F7-80F6-54D36BB1EB38}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaveEmployee</RootNamespace>
+    <AssemblyName>SaveEmployee</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\CourseManager.cs" />
+    <Compile Include="BLL\DepartmentManager.cs" />
+    <Compile Include="BLL\DesignationManager.cs" />
+    <Compile Include="BLL\ResultManager.cs" />
+    <Compile Include="BLL\RoomManager.cs" />
+    <Compile Include="BLL\SemesterManager.cs" />
+    <Compile Include="BLL\TeacherManager.cs" />
+    <Compile Include="Context\ApplicationContext.cs" />
+    <Compile Include="Controllers\ClassroomsController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\CourseStaticssController.cs" />
+    <Compile Include="Controllers\CourseStudentsController.cs" />
+    <Compile Include="Controllers\CourseTeacherController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentResultsController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="DAL\CourseGateway.cs" />
+    <Compile Include="DAL\DatabaseConnection.cs" />
+    <Compile Include="DAL\DepartmentGateway.cs" />
+    <Compile Include="DAL\DesignationGateway.cs" />
+    <Compile Include="DAL\ResultGateway.cs" />
+    <Compile Include="DAL\RoomGateway.cs" />
+    <Compile Include="DAL\SemesterGateway.cs" />
+    <Compile Include="DAL\TeachersGateway.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604290451031_droppedManyColumns.cs" />
+    <Compile Include="Migrations\201604290451031_droppedManyColumns.Designer.cs">
+      <DependentUpon>201604290451031_droppedManyColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605010406193_ChangedCourseTeacher.cs" />
+    <Compile Include="Migrations\201605010406193_ChangedCourseTeacher.Designer.cs">
+      <DependentUpon>201605010406193_ChangedCourseTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605010516596_addedCourseTeacherCourseCredit.cs" />
+    <Compile Include="Migrations\201605010516596_addedCourseTeacherCourseCredit.Designer.cs">
+      <DependentUpon>201605010516596_addedCourseTeacherCourseCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605010834042_addedTeacherNameToCourseTeacher.cs" />
+    <Compile Include="Migrations\201605010834042_addedTeacherNameToCourseTeacher.Designer.cs">
+      <DependentUpon>201605010834042_addedTeacherNameToCourseTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605011100456_AddRequiredFieldToCourseAndSemester.cs" />
+    <Compile Include="Migrations\201605011100456_AddRequiredFieldToCourseAndSemester.Designer.cs">
+      <DependentUpon>201605011100456_AddRequiredFieldToCourseAndSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605011120310_AddTeachersDesignationValidation.cs" />
+    <Compile Include="Migrations\201605011120310_AddTeachersDesignationValidation.Designer.cs">
+      <DependentUpon>201605011120310_AddTeachersDesignationValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605011127073_AddTeachersInfoValidation.cs" />
+    <Compile Include="Migrations\201605011127073_AddTeachersInfoValidation.Designer.cs">
+      <DependentUpon>201605011127073_AddTeachersInfoValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605011246384_AddStudentsInfoValidation.cs" />
+    <Compile Include="Migrations\201605011246384_AddStudentsInfoValidation.Designer.cs">
+      <DependentUpon>201605011246384_AddStudentsInfoValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605011324583_ValidationaddedEnrollCourse.cs" />
+    <Compile Include="Migrations\201605011324583_ValidationaddedEnrollCourse.Designer.cs">
+      <DependentUpon>201605011324583_ValidationaddedEnrollCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605011329080_ValidationaddedEnrollCourse-2.cs" />
+    <Compile Include="Migrations\201605011329080_ValidationaddedEnrollCourse-2.Designer.cs">
+      <DependentUpon>201605011329080_ValidationaddedEnrollCourse-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605031054312_NewKeyAddedToClassRoom.cs" />
+    <Compile Include="Migrations\201605031054312_NewKeyAddedToClassRoom.Designer.cs">
+      <DependentUpon>201605031054312_NewKeyAddedToClassRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Classroom.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\CourseStatics.cs" />
+    <Compile Include="Models\CourseStudent.cs" />
+    <Compile Include="Models\CourseTeacher.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentResult.cs" />
+    <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="UCRMSHome\css\agency.css" />
+    <Content Include="UCRMSHome\css\bootstrap.css" />
+    <Content Include="UCRMSHome\css\bootstrap.min.css" />
+    <Content Include="UCRMSHome\font-awesome\css\font-awesome.css" />
+    <Content Include="UCRMSHome\font-awesome\css\font-awesome.min.css" />
+    <Content Include="UCRMSHome\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="UCRMSHome\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="UCRMSHome\img\about\1.jpg" />
+    <Content Include="UCRMSHome\img\about\2.jpg" />
+    <Content Include="UCRMSHome\img\about\3.jpg" />
+    <Content Include="UCRMSHome\img\about\4.jpg" />
+    <Content Include="UCRMSHome\img\header-bg.jpg" />
+    <Content Include="UCRMSHome\img\logos\aetuts.jpg" />
+    <Content Include="UCRMSHome\img\logos\creative-market.jpg" />
+    <Content Include="UCRMSHome\img\logos\designmodo.jpg" />
+    <Content Include="UCRMSHome\img\logos\envato.jpg" />
+    <Content Include="UCRMSHome\img\logos\microlancer.jpg" />
+    <Content Include="UCRMSHome\img\logos\themeforest.jpg" />
+    <Content Include="UCRMSHome\img\logos\wordpress.jpg" />
+    <Content Include="UCRMSHome\img\map-image.png" />
+    <Content Include="UCRMSHome\img\portfolio\dreams-preview.png" />
+    <Content Include="UCRMSHome\img\portfolio\dreams.png" />
+    <Content Include="UCRMSHome\img\portfolio\escape-preview.png" />
+    <Content Include="UCRMSHome\img\portfolio\escape.png" />
+    <Content Include="UCRMSHome\img\portfolio\golden-preview.png" />
+    <Content Include="UCRMSHome\img\portfolio\golden.png" />
+    <Content Include="UCRMSHome\img\portfolio\roundicons-free.png" />
+    <Content Include="UCRMSHome\img\portfolio\roundicons.png" />
+    <Content Include="UCRMSHome\img\portfolio\startup-framework-preview.png" />
+    <Content Include="UCRMSHome\img\portfolio\startup-framework.png" />
+    <Content Include="UCRMSHome\img\portfolio\treehouse-preview.png" />
+    <Content Include="UCRMSHome\img\portfolio\treehouse.png" />
+    <Content Include="UCRMSHome\img\team\1.jpg" />
+    <Content Include="UCRMSHome\img\team\2.jpg" />
+    <Content Include="UCRMSHome\img\team\3.jpg" />
+    <Content Include="UCRMSHome\Home.html" />
+    <Content Include="UCRMSHome\js\agency.js" />
+    <Content Include="UCRMSHome\js\bootstrap.js" />
+    <Content Include="UCRMSHome\js\bootstrap.min.js" />
+    <Content Include="UCRMSHome\js\cbpAnimatedHeader.js" />
+    <Content Include="UCRMSHome\js\cbpAnimatedHeader.min.js" />
+    <Content Include="UCRMSHome\js\classie.js" />
+    <Content Include="UCRMSHome\js\contact_me.js" />
+    <Content Include="UCRMSHome\js\jqBootstrapValidation.js" />
+    <Content Include="UCRMSHome\js\jquery.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="UCRMSHome\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="UCRMSHome\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="UCRMSHome\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="UCRMSHome\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="UCRMSHome\font-awesome\less\bordered-pulled.less" />
+    <Content Include="UCRMSHome\font-awesome\less\core.less" />
+    <Content Include="UCRMSHome\font-awesome\less\fixed-width.less" />
+    <Content Include="UCRMSHome\font-awesome\less\font-awesome.less" />
+    <Content Include="UCRMSHome\font-awesome\less\icons.less" />
+    <Content Include="UCRMSHome\font-awesome\less\larger.less" />
+    <Content Include="UCRMSHome\font-awesome\less\list.less" />
+    <Content Include="UCRMSHome\font-awesome\less\mixins.less" />
+    <Content Include="UCRMSHome\font-awesome\less\path.less" />
+    <Content Include="UCRMSHome\font-awesome\less\rotated-flipped.less" />
+    <Content Include="UCRMSHome\font-awesome\less\spinning.less" />
+    <Content Include="UCRMSHome\font-awesome\less\stacked.less" />
+    <Content Include="UCRMSHome\font-awesome\less\variables.less" />
+    <Content Include="UCRMSHome\font-awesome\scss\font-awesome.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_core.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_icons.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_larger.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_list.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_mixins.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_path.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_spinning.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_stacked.scss" />
+    <Content Include="UCRMSHome\font-awesome\scss\_variables.scss" />
+    <Content Include="UCRMSHome\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="UCRMSHome\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="UCRMSHome\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="UCRMSHome\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="UCRMSHome\less\agency.less" />
+    <Content Include="UCRMSHome\less\mixins.less" />
+    <Content Include="UCRMSHome\less\variables.less" />
+    <Content Include="UCRMSHome\LICENSE" />
+    <Content Include="UCRMSHome\mail\contact_me.php" />
+    <Content Include="UCRMSHome\README.md" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.validate.date.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Departments\ShowAllDepartments.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Teachers\Create.cshtml" />
+    <Content Include="Views\CourseTeacher\AssignCourse.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Classrooms\AllocateClassRoom.cshtml" />
+    <Content Include="Views\CourseStudents\StudentToCourse.cshtml" />
+    <Content Include="Views\StudentResults\SaveResult.cshtml" />
+    <Content Include="Views\CourseStaticss\CourseStatistics.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604290451031_droppedManyColumns.resx">
+      <DependentUpon>201604290451031_droppedManyColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605010406193_ChangedCourseTeacher.resx">
+      <DependentUpon>201605010406193_ChangedCourseTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605010516596_addedCourseTeacherCourseCredit.resx">
+      <DependentUpon>201605010516596_addedCourseTeacherCourseCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605010834042_addedTeacherNameToCourseTeacher.resx">
+      <DependentUpon>201605010834042_addedTeacherNameToCourseTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605011100456_AddRequiredFieldToCourseAndSemester.resx">
+      <DependentUpon>201605011100456_AddRequiredFieldToCourseAndSemester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605011120310_AddTeachersDesignationValidation.resx">
+      <DependentUpon>201605011120310_AddTeachersDesignationValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605011127073_AddTeachersInfoValidation.resx">
+      <DependentUpon>201605011127073_AddTeachersInfoValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605011246384_AddStudentsInfoValidation.resx">
+      <DependentUpon>201605011246384_AddStudentsInfoValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605011324583_ValidationaddedEnrollCourse.resx">
+      <DependentUpon>201605011324583_ValidationaddedEnrollCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605011329080_ValidationaddedEnrollCourse-2.resx">
+      <DependentUpon>201605011329080_ValidationaddedEnrollCourse-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605031054312_NewKeyAddedToClassRoom.resx">
+      <DependentUpon>201605031054312_NewKeyAddedToClassRoom.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1603</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1603/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
