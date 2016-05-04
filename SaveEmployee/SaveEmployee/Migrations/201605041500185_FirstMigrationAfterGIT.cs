@@ -1,9 +1,9 @@
-namespace UniversityApplication.Migrations
+namespace SaveEmployee.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class droppedManyColumns : DbMigration
+    public partial class FirstMigrationAfterGIT : DbMigration
     {
         public override void Up()
         {
@@ -11,14 +11,15 @@ namespace UniversityApplication.Migrations
                 "dbo.Classrooms",
                 c => new
                     {
-                        ClassRoomRoomNo = c.String(nullable: false, maxLength: 128),
+                        ClassroomId = c.Int(nullable: false, identity: true),
                         ClassRoomDepartmentCode = c.String(),
                         ClassRoomCourseCode = c.String(),
+                        ClassRoomRoomNo = c.String(),
                         ClassRoomWeekDay = c.String(),
                         ClassRoomStartsAt = c.Time(nullable: false, precision: 7),
                         ClassRoomEndssAt = c.Time(nullable: false, precision: 7),
                     })
-                .PrimaryKey(t => t.ClassRoomRoomNo);
+                .PrimaryKey(t => t.ClassroomId);
             
             CreateTable(
                 "dbo.Courses",
@@ -28,8 +29,8 @@ namespace UniversityApplication.Migrations
                         CourseName = c.String(nullable: false),
                         CourseCredit = c.Double(nullable: false),
                         CourseDescription = c.String(),
-                        CourseDepartmentCode = c.String(),
-                        CourseSemester = c.String(),
+                        CourseDepartmentCode = c.String(nullable: false),
+                        CourseSemester = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.CourseCode);
             
@@ -38,8 +39,8 @@ namespace UniversityApplication.Migrations
                 c => new
                     {
                         CourseStudentID = c.Int(nullable: false, identity: true),
-                        CourseStudentRegNo = c.String(),
-                        CourseStudentCourse = c.String(),
+                        CourseStudentRegNo = c.String(nullable: false),
+                        CourseStudentCourse = c.String(nullable: false),
                         CourseStudentRegDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.CourseStudentID);
@@ -49,8 +50,11 @@ namespace UniversityApplication.Migrations
                 c => new
                     {
                         CourseTeacherID = c.Int(nullable: false, identity: true),
-                        CourseTeacherDepartmentCode = c.String(),
-                        CourseTeacherEmail = c.String(),
+                        CourseTeacherDepartmentCode = c.String(nullable: false),
+                        CourseTeacherEmail = c.String(nullable: false),
+                        CourseTeacherCourseCode = c.String(nullable: false),
+                        CourseTeacherCourseCredit = c.Double(),
+                        CourseTeacherTeacherName = c.String(),
                     })
                 .PrimaryKey(t => t.CourseTeacherID);
             
@@ -78,10 +82,10 @@ namespace UniversityApplication.Migrations
                 c => new
                     {
                         StudentRegNo = c.String(nullable: false, maxLength: 128),
-                        StudentName = c.String(),
-                        StudentContact = c.String(),
-                        StudentAddress = c.String(),
-                        StudentDepartmentCode = c.String(),
+                        StudentName = c.String(nullable: false),
+                        StudentContact = c.String(nullable: false),
+                        StudentAddress = c.String(nullable: false),
+                        StudentDepartmentCode = c.String(nullable: false),
                         StudentEmail = c.String(nullable: false),
                         StudeRegDate = c.DateTime(nullable: false),
                     })
@@ -92,12 +96,12 @@ namespace UniversityApplication.Migrations
                 c => new
                     {
                         TeacherEmail = c.String(nullable: false, maxLength: 128),
-                        TeacherDesignation = c.String(),
+                        TeacherDesignation = c.String(nullable: false),
                         TeacherCredit = c.Double(nullable: false),
-                        TeacherName = c.String(),
-                        TeacherContact = c.String(),
-                        TeacherAddress = c.String(),
-                        TeacherDepartmentCode = c.String(),
+                        TeacherName = c.String(nullable: false),
+                        TeacherContact = c.String(nullable: false),
+                        TeacherAddress = c.String(nullable: false),
+                        TeacherDepartmentCode = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.TeacherEmail);
             

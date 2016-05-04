@@ -2,7 +2,7 @@
 {
     public class DatabaseConnection
     {
-        public string connection = @"Server=.\SQLEXPRESS2; Database = UniversityApplicationDatabase; Integrated Security=true;";
+        public string connection = @"Server=.\SQLEXPRESS; Database = UniversityApplicationDatabase; Integrated Security=true;";
 
         //public string Connection
         //{

@@ -145,52 +145,19 @@
     <Compile Include="DAL\RoomGateway.cs" />
     <Compile Include="DAL\SemesterGateway.cs" />
     <Compile Include="DAL\TeachersGateway.cs" />
+    <Compile Include="Error\ErrorInfo.aspx.cs">
+      <DependentUpon>ErrorInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\ErrorInfo.aspx.designer.cs">
+      <DependentUpon>ErrorInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604290451031_droppedManyColumns.cs" />
-    <Compile Include="Migrations\201604290451031_droppedManyColumns.Designer.cs">
-      <DependentUpon>201604290451031_droppedManyColumns.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605010406193_ChangedCourseTeacher.cs" />
-    <Compile Include="Migrations\201605010406193_ChangedCourseTeacher.Designer.cs">
-      <DependentUpon>201605010406193_ChangedCourseTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605010516596_addedCourseTeacherCourseCredit.cs" />
-    <Compile Include="Migrations\201605010516596_addedCourseTeacherCourseCredit.Designer.cs">
-      <DependentUpon>201605010516596_addedCourseTeacherCourseCredit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605010834042_addedTeacherNameToCourseTeacher.cs" />
-    <Compile Include="Migrations\201605010834042_addedTeacherNameToCourseTeacher.Designer.cs">
-      <DependentUpon>201605010834042_addedTeacherNameToCourseTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605011100456_AddRequiredFieldToCourseAndSemester.cs" />
-    <Compile Include="Migrations\201605011100456_AddRequiredFieldToCourseAndSemester.Designer.cs">
-      <DependentUpon>201605011100456_AddRequiredFieldToCourseAndSemester.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605011120310_AddTeachersDesignationValidation.cs" />
-    <Compile Include="Migrations\201605011120310_AddTeachersDesignationValidation.Designer.cs">
-      <DependentUpon>201605011120310_AddTeachersDesignationValidation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605011127073_AddTeachersInfoValidation.cs" />
-    <Compile Include="Migrations\201605011127073_AddTeachersInfoValidation.Designer.cs">
-      <DependentUpon>201605011127073_AddTeachersInfoValidation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605011246384_AddStudentsInfoValidation.cs" />
-    <Compile Include="Migrations\201605011246384_AddStudentsInfoValidation.Designer.cs">
-      <DependentUpon>201605011246384_AddStudentsInfoValidation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605011324583_ValidationaddedEnrollCourse.cs" />
-    <Compile Include="Migrations\201605011324583_ValidationaddedEnrollCourse.Designer.cs">
-      <DependentUpon>201605011324583_ValidationaddedEnrollCourse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605011329080_ValidationaddedEnrollCourse-2.cs" />
-    <Compile Include="Migrations\201605011329080_ValidationaddedEnrollCourse-2.Designer.cs">
-      <DependentUpon>201605011329080_ValidationaddedEnrollCourse-2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605031054312_NewKeyAddedToClassRoom.cs" />
-    <Compile Include="Migrations\201605031054312_NewKeyAddedToClassRoom.Designer.cs">
-      <DependentUpon>201605031054312_NewKeyAddedToClassRoom.cs</DependentUpon>
+    <Compile Include="Migrations\201605041500185_FirstMigrationAfterGIT.cs" />
+    <Compile Include="Migrations\201605041500185_FirstMigrationAfterGIT.Designer.cs">
+      <DependentUpon>201605041500185_FirstMigrationAfterGIT.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classroom.cs" />
@@ -240,6 +207,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Error\ErrorInfo.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -383,38 +351,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604290451031_droppedManyColumns.resx">
-      <DependentUpon>201604290451031_droppedManyColumns.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605010406193_ChangedCourseTeacher.resx">
-      <DependentUpon>201605010406193_ChangedCourseTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605010516596_addedCourseTeacherCourseCredit.resx">
-      <DependentUpon>201605010516596_addedCourseTeacherCourseCredit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605010834042_addedTeacherNameToCourseTeacher.resx">
-      <DependentUpon>201605010834042_addedTeacherNameToCourseTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605011100456_AddRequiredFieldToCourseAndSemester.resx">
-      <DependentUpon>201605011100456_AddRequiredFieldToCourseAndSemester.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605011120310_AddTeachersDesignationValidation.resx">
-      <DependentUpon>201605011120310_AddTeachersDesignationValidation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605011127073_AddTeachersInfoValidation.resx">
-      <DependentUpon>201605011127073_AddTeachersInfoValidation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605011246384_AddStudentsInfoValidation.resx">
-      <DependentUpon>201605011246384_AddStudentsInfoValidation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605011324583_ValidationaddedEnrollCourse.resx">
-      <DependentUpon>201605011324583_ValidationaddedEnrollCourse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605011329080_ValidationaddedEnrollCourse-2.resx">
-      <DependentUpon>201605011329080_ValidationaddedEnrollCourse-2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605031054312_NewKeyAddedToClassRoom.resx">
-      <DependentUpon>201605031054312_NewKeyAddedToClassRoom.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605041500185_FirstMigrationAfterGIT.resx">
+      <DependentUpon>201605041500185_FirstMigrationAfterGIT.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,4 @@
-namespace UniversityApplication.Migrations
+namespace SaveEmployee.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -9,7 +9,7 @@ namespace UniversityApplication.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(UniversityApplication.Context.ApplicationContext context)
